@@ -10,9 +10,6 @@ import { Button,Input} from 'react-native-elements';
 
 
 
-
-
-
 function LoginStackScreen() {
   return (
     <View style={styles.container}>

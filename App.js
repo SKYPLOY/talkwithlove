@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import FirstAppStackScreen from './src/components/FirstApp';
-import RegisterStackScreen from './src/components/Register';
-import LoginStackScreen from './src/components/Login'
-import { CenterFocusStrong } from '@material-ui/icons';
+import FirstAppStackScreen from './src/components/FirstAppScreen';
+import RegisterStackScreen from './src/components/RegisterScreen';
+import LoginStackScreen from './src/components/LoginScreen'
+
 
 
 

@@ -11,9 +11,6 @@ import {
 import { Button ,Input} from 'react-native-elements';
 
 
-
-
-
 function RegisterStackScreen({ navigation }) {
   return (
     <View style={styles.container}>

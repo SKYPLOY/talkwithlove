@@ -4,24 +4,10 @@ import {
   View, 
   Text
 } from 'react-native';
+import Home from './HomeScreen'; 
+import ListChatScreen from './ListChatScreen';
 
 const Tab = createMaterialTopTabNavigator();
-
-function FeedScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Feed!</Text>
-    </View>
-  );
-}
-
-function NotificationsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Notifications!</Text>
-    </View>
-  );
-}
 
 function ProfileScreen() {
   return (
@@ -34,23 +20,24 @@ function ProfileScreen() {
 export default function MyTabs() {
   return (
     <View style={{ flex: 1,marginTop:50}}>
+    <View></View>
     <Tab.Navigator
       initialRouteName="Feed"
       tabBarOptions={{
-        activeTintColor: '#e91e63',
+        activeTintColor: '#000000',
         labelStyle: { fontSize: 12 },
-        style: { backgroundColor: 'powderblue' },
+        style: { backgroundColor: '#FDEEF9' },
       }}
     >
       <Tab.Screen
         name="Feed"
-        component={FeedScreen}
+        component={Home}
         options={{ tabBarLabel: 'Home' }}
       />
       <Tab.Screen
         name="Notifications"
-        component={NotificationsScreen}
-        options={{ tabBarLabel: 'Updates' }}
+        component={ListChatScreen}
+        options={{ tabBarLabel: 'ListChat' }}
       />
       <Tab.Screen
         name="Profile"

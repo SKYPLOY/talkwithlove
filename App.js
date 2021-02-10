@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import FirstAppStackScreen from './src/components/FirstAppScreen';
 import RegisterStackScreen from './src/components/RegisterScreen';
 import LoginStackScreen from './src/components/LoginScreen';
-import HomeScreen from './src/components/MaterialTopTabNavigator';
+import HomeScreen from './src/components/TopTabNavigator';
 
 
 

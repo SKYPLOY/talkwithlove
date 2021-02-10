@@ -3,8 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import FirstAppStackScreen from './src/components/FirstAppScreen';
 import RegisterStackScreen from './src/components/RegisterScreen';
-import LoginStackScreen from './src/components/LoginScreen'
-
+import LoginStackScreen from './src/components/LoginScreen';
+import HomeScreen from './src/components/MaterialTopTabNavigator';
 
 
 
@@ -17,6 +17,7 @@ function App() {
         <Stack.Screen options={{headerShown: null}} name=" " component={FirstAppStackScreen} />
         <Stack.Screen options={{title:null,headerBackTitle:"black"}} name="Register " component={RegisterStackScreen} />
         <Stack.Screen options={{title:null,headerBackTitle:"black" }} name="Login " component={LoginStackScreen} />
+        <Stack.Screen options={{headerShown: null}} name="Home " component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

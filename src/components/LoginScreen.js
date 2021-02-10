@@ -3,14 +3,13 @@ import {
   View, 
   Image,
   StyleSheet,
-  Text,
-  Alert
+  Text
 } from 'react-native';
 import { Button,Input} from 'react-native-elements';
 
 
 
-function LoginStackScreen() {
+function LoginStackScreen({ navigation }) {
   return (
     <View style={styles.container}>
         <View style={styles.Box}>
@@ -28,7 +27,7 @@ function LoginStackScreen() {
             </View>
         </View>
         <View style={styles.ButtonPermission}>
-              <Button  onPress={() => Alert.alert('ยินดีต้อนรับ')}
+              <Button  onPress={() =>  navigation.navigate("Home ")}
                   buttonStyle={{backgroundColor: "#ffffff" ,width:300}}
                   title="เข้าใช้งาน" titleStyle={{ color: '#515151', fontSize:18,fontFamily:"Roboto" }}
                   

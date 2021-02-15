@@ -3,6 +3,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import { 
   View, 
 } from 'react-native';
+import { Header} from 'react-native-elements'; 
  
 import Home from './HomeScreen'; 
 import ListChatScreen from './ListChatScreen';
@@ -15,8 +16,12 @@ const Tab = createMaterialTopTabNavigator();
 
 export default function MyTabs() {
   return (
-    <View style={{ flex: 1,marginTop:50}}>
-    <View></View>
+    <View style={{ flex: 1}}>
+    <Header
+        leftComponent={{ icon: 'menu', color: '#000000' }}
+        centerComponent={{ text: 'TALK WITH LOVE', style: { color: '#000000' , } }}
+        containerStyle={{backgroundColor: '#FDEEF9'}}
+      />
     <Tab.Navigator
       initialRouteName="Feed"
       tabBarOptions={{

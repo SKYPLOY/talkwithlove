@@ -60,7 +60,7 @@ export default function MyTabs() {
         component={NotificationsScreen}
         options={{ tabBarIcon:({tintColor, focused})=>(  
           <Icon  
-              name={focused ? 'exclamation-circle' : 'exclamation-circle'}  
+              name={focused ? 'bell' : 'bell'}  
               color={tintColor}  
               size={25}  
           />  

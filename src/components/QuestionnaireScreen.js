@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Alert, Modal, StyleSheet, Text, Pressable, View,Image,} from "react-native";
-import { Container, Header, Content, ListItem, CheckBox, Body,Label } from 'native-base';
 import { Input } from 'react-native-elements';
+import { ListItem, CheckBox, Body } from 'native-base';
+import { ScrollView } from 'react-native-gesture-handler';
 export default  Question = ({navigation}) => {
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -31,16 +32,15 @@ export default  Question = ({navigation}) => {
           </View>
         </View>
       </Modal>
-      <View style={{flexDirection:'column'}}>
+      <ScrollView>
         <View style={styles.Box}>
-          <View><Image source={require('../assets/logo.png')} style={styles.ImageLogo}/></View>
-          <View style={{justifyContent:"center"}}>
-            <Text style={styles.logo}>ตอบคำถามต่อไปนี้</Text>
-          </View>
+            <View><Image source={require('../assets/logo.png')} style={styles.ImageLogo}/></View>
+            <View style={{justifyContent:"center"}}>
+              <Text style={styles.logo}>ตอบคำถามต่อไปนี้</Text>
+            </View>
         </View>
-        <Content>
-          <View style={{padding:10}}>
-            <View style={styles.textCheck}><Text>1.คุณเป็น?</Text></View>
+        <View style={{padding:10}}>
+          <View style={styles.textCheck}><Text>1.คุณเป็น?</Text></View>
             <ListItem>
               <CheckBox checked={true} />
               <Body style={styles.textCheck}><Text>ผู้หญิง</Text></Body>
@@ -53,29 +53,8 @@ export default  Question = ({navigation}) => {
               <CheckBox checked={false} color="green"/>
               <Body style={styles.textCheck}><Text>อื่นๆ</Text></Body>
             </ListItem>
-          </View>
-          <View style={{padding:10}}>
-            <View style={styles.textCheck}><Text>2.คุณคิดว่าคุณมีนิสัยเป็นอย่างไร?</Text></View>
-            <ListItem>
-              <CheckBox checked={true} />
-              <Body style={styles.textCheck}><Text>ใจดี</Text></Body>
-            </ListItem>
-            <ListItem>
-              <CheckBox checked={false} />
-              <Body style={styles.textCheck}><Text>สุขุม</Text></Body>
-            </ListItem>
-            <ListItem>
-              <CheckBox checked={false} />
-              <Body style={styles.textCheck}><Text>เจ้าชู้</Text></Body>
-            </ListItem>
-            <ListItem>
-              <CheckBox checked={false} color="green"/>
-              <Body style={styles.textCheck}><Text>อื่นๆ</Text></Body>
-            </ListItem>
             <Input placeholder='ระบุ' style={{paddingStart:5 }}/>
-          </View>
-          <View style={{padding:10}}>
-            <View style={styles.textCheck}><Text>3.รสนิยมทางเพศของคุณ?</Text></View>
+            <View style={styles.textCheck}><Text>2.รสนิยมทางเพศของคุณ?</Text></View>
             <ListItem>
               <CheckBox checked={true} />
               <Body style={styles.textCheck}><Text>เกย์</Text></Body>
@@ -93,8 +72,24 @@ export default  Question = ({navigation}) => {
               <Body style={styles.textCheck}><Text>อื่นๆ</Text></Body>
             </ListItem>
             <Input placeholder='ระบุ' style={{paddingStart:5 }}/>
-          </View>
-          <View style={{padding:10}}>
+            <View style={styles.textCheck}><Text>3.คุณคิดว่าคุณมีนิสัยเป็นอย่างไร?</Text></View>
+            <ListItem>
+              <CheckBox checked={true} />
+              <Body style={styles.textCheck}><Text>ใจดี</Text></Body>
+            </ListItem>
+            <ListItem>
+              <CheckBox checked={false} />
+              <Body style={styles.textCheck}><Text>สุขุม</Text></Body>
+            </ListItem>
+            <ListItem>
+              <CheckBox checked={false} />
+              <Body style={styles.textCheck}><Text>เจ้าชู้</Text></Body>
+            </ListItem>
+            <ListItem>
+              <CheckBox checked={false} color="green"/>
+              <Body style={styles.textCheck}><Text>อื่นๆ</Text></Body>
+            </ListItem>
+            <Input placeholder='ระบุ' style={{paddingStart:5 }}/>
             <View style={styles.textCheck}><Text>4.คุณชอบคนแบบไหน?</Text></View>
             <ListItem>
               <CheckBox checked={true} />
@@ -113,8 +108,6 @@ export default  Question = ({navigation}) => {
               <Body style={styles.textCheck}><Text>อื่นๆ</Text></Body>
             </ListItem>
             <Input placeholder='ระบุ' style={{paddingStart:5 }}/>
-          </View>
-          <View style={{padding:10}}>
             <View style={styles.textCheck}><Text>5.คุณต้องการเห็น?</Text></View>
             <ListItem>
               <CheckBox checked={true} />
@@ -132,19 +125,16 @@ export default  Question = ({navigation}) => {
           <View style={{padding:10}}>
             <View style={styles.textCheck}><Text>6.คุณต้องการหาคนอายุเท่าไร?</Text></View>
             <Input placeholder='ระบุ' style={{paddingStart:5 }}/>
-          </View>
-        </Content>
-    
+        </View>
         <View style={styles.buttonstart}>
           <Pressable
             style={[styles.button, styles.buttonOpen]}
             onPress={() => setModalVisible(true)}
              >
-            <Text style={styles.textStyle}>ตกลง</Text>
+            <Text style={{width:310, textAlign:'center',color:'#515151'}}>ตกลง</Text>
           </Pressable>
         </View>
-        
-      </View> 
+      </ScrollView>
     </View>
   );
 };
@@ -152,11 +142,11 @@ export default  Question = ({navigation}) => {
 const styles = StyleSheet.create({
   centeredView: {
     flex: 1,
-    alignItems: "center",
+    justifyContent: "center",
     backgroundColor:"#FDEEF9" ,
   },
   modalView: {
-    margin: 20,
+    marginLeft:30,
     backgroundColor: "white",
     borderRadius: 20,
     padding: 35,
@@ -168,24 +158,23 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 4,
-    elevation: 5
+    elevation: 5,
+    width:300
   },
   button: {
-    borderRadius: 20,
+    borderRadius: 5,
     padding: 10,
-    elevation: 2,
   },
   buttonOpen: {
-    backgroundColor: "#F194FF",
+    backgroundColor: "#FFFFFF",
   },
   buttonClose: {
-    backgroundColor: "#2196F3",
+    backgroundColor: "red",
   },
   textStyle: {
     color: "white",
-    fontWeight: "bold",
     textAlign: "center",
-    width:200,
+    width:250,
   },
   modalText: {
     marginBottom: 15,
@@ -204,7 +193,7 @@ const styles = StyleSheet.create({
   },  
   logo:{
     backgroundColor:"#FFFFFF",
-    borderRadius:20,
+    borderRadius:10,
     fontSize:18,
     width:210,
     height:50,
@@ -213,6 +202,7 @@ const styles = StyleSheet.create({
     top:-15
   },
   buttonstart:{
+    paddingBottom:10,
     width:100,
     alignItems: 'flex-end', 
     justifyContent: 'flex-start',

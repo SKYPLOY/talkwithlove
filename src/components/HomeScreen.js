@@ -25,14 +25,11 @@ export default function FeedScreen() {
             <CardItem cardBody>
               <Image source={require('../assets/m12.jpg')} style={{height: 300, width: null, flex: 1}}/>
             </CardItem>
-            <CardItem style={{justifyContent:'center'}}>
-                <Button transparent style={{padding:20}}>
-                  <Icon active name="close" />
-                </Button>
-                <Button transparent style={{padding:20}}>
+            <CardItem style={{justifyContent:'space-between'}}>
+                <Button transparent>
                   <Icon active name="chatbubble-ellipses-outline" /> 
                 </Button>
-                <Button transparent style={{padding:20}}>
+                <Button transparent>
                   <Icon active name="heart-outline" />
                 </Button>
             </CardItem>
@@ -50,14 +47,11 @@ export default function FeedScreen() {
             <CardItem cardBody>
               <Image source={require('../assets/m12.jpg')} style={{height: 300, width: null, flex: 1}}/>
             </CardItem>
-            <CardItem style={{justifyContent:'center'}}>
-                <Button transparent style={{padding:20}}>
-                  <Icon active name="close" />
+            <CardItem style={{justifyContent:'space-between'}}>
+                <Button transparent>
+                <Icon active name="chatbubble-ellipses-outline" /> 
                 </Button>
-                <Button transparent style={{padding:20}}>
-                  <Icon active name="chatbubble-ellipses-outline" /> 
-                </Button>
-                <Button transparent style={{padding:20}}>
+                <Button transparent>
                   <Icon active name="heart-outline" />
                 </Button>
             </CardItem>

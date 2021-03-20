@@ -3,21 +3,26 @@ import {
     View, 
     Text,
     Image,
-    StyleSheet
+    StyleSheet,
+    TouchableOpacity
   } from 'react-native';
-import { Container, Header, Content, Card, CardItem, Thumbnail, Button, Icon, Left, Body, Right, } from 'native-base';
+import { Container,Content, Card, CardItem, Thumbnail, Button, Icon, Left, Body, } from 'native-base';
+import { Navigation } from '@material-ui/icons';
 
 
-export default function FeedScreen() {
+export default function FeedScreen({navigation}) {
     return (
       <Container style={styles.container}>
         <Content>
           <Card>
             <CardItem>
               <Left>
-                <Thumbnail source={require('../assets/m13.jpg')} />
+                <Thumbnail source={require('../assets/m13.jpg')}  />
                 <Body>
+                <TouchableOpacity onPress={() =>  navigation.navigate("UserProfile")}>
                   <Text>Rowoon</Text>
+                </TouchableOpacity>
+                  
                   <Text note>ชาย , 22 ปี</Text>
                 </Body>
               </Left>

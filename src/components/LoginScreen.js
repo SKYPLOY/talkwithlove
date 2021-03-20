@@ -12,7 +12,7 @@ function LoginStackScreen({ navigation }) {
   return (
     <View style={styles.container}>
         <View>
-           <View  style={styles.Box}>
+            <View  style={styles.Box}>
              <View><Image source={require('../assets/logo.png')} style={styles.ImageLogo}/></View>
               <View style={{justifyContent:"center"}}>
                 <Text style={styles.logo}>เข้าสู่ระบบ</Text>

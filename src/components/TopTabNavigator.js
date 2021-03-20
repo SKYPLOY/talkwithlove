@@ -38,7 +38,7 @@ export default function MyTabs() {
         component={Home}
         options={{ tabBarIcon:({tintColor, focused})=>(  
           <Icon  
-              name={focused ? 'users' : 'users'}  
+              name={focused ? 'user' : 'user'}  
               color={tintColor}  
               size={20}  
           />  

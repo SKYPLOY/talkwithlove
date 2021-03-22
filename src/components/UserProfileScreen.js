@@ -17,6 +17,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 const UserProfileScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
+    <ScrollView>
      <View style={styles.userInfoSection}>
         <View style={{flexDirection: 'row', marginTop: 15}}>
           <Avatar.Image 
@@ -27,13 +28,9 @@ const UserProfileScreen = ({navigation}) => {
             <Title style={[styles.title, {marginTop:15, marginBottom: 5,}]}>RoWoon</Title>
             <Caption style={styles.caption}>@Ro_Lee</Caption>
           </View>
-          <View style={{justifyContent:"flex-end", paddingBottom:39, marginLeft:100}}>
-            <Icon name="comment" color='#FBD1F0' size={25} onPress={() => navigation.navigate("Question ")}/>
-          </View>
         </View>  
       </View>
     
-      <ScrollView>
       <View style={styles.Box}>
       <View style={styles.userInfoSectionBox}>
         <View style={styles.row}>
@@ -65,7 +62,9 @@ const UserProfileScreen = ({navigation}) => {
       </View>
       </ScrollView>
       
-      
+      <View>
+        <Button icon="comment"  mode="contained" color="#FBD1F0" onPress={() => navigation.navigate("Question ")}> เริ่มพูดคุยกันเลย </Button>
+      </View>
      
       
       

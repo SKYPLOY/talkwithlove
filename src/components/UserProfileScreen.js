@@ -11,14 +11,13 @@ import {
   Card,
   Paragraph
 } from 'react-native-paper';
-
+import { ScrollView } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 const UserProfileScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
-
-      <View style={styles.userInfoSection}>
+     <View style={styles.userInfoSection}>
         <View style={{flexDirection: 'row', marginTop: 15}}>
           <Avatar.Image 
             source={require('../assets/m12.jpg')}
@@ -29,11 +28,12 @@ const UserProfileScreen = ({navigation}) => {
             <Caption style={styles.caption}>@Ro_Lee</Caption>
           </View>
           <View style={{justifyContent:"flex-end", paddingBottom:39, marginLeft:100}}>
-            <Icon name="heart" color="red" size={25} onPress={() => navigation.navigate("Question ")}/>
+            <Icon name="comment" color='#FBD1F0' size={25} onPress={() => navigation.navigate("Question ")}/>
           </View>
         </View>  
       </View>
-
+    
+      <ScrollView>
       <View style={styles.Box}>
       <View style={styles.userInfoSectionBox}>
         <View style={styles.row}>
@@ -44,47 +44,29 @@ const UserProfileScreen = ({navigation}) => {
           <Icon name="envelope" color="#777777" size={20}/>
           <Text style={{color:"#777777", marginLeft: 20}}>Rowoon_Lee@email.com</Text>
         </View>
-        <View style={styles.row}>
-          <Text style={{color:"#777777",fontSize:18}}>ผู้ติดตาม</Text>
-          <Text style={{marginLeft: 10,fontSize:18, fontWeight: 'bold'}}>228</Text>
-          <Text style={{color:"#777777",marginLeft: 20,fontSize:18}}>กำลังติดตาม</Text>
-          <Text style={{marginLeft: 10,fontSize:18, fontWeight: 'bold'}}>18</Text>
-        </View>
       </View>
       </View>
       
-      <View style={{padding:10}}>
-        <Card  style={{marginBottom:10}}>
-          <Card.Content style={{flexDirection: 'row'}} >
-            <Avatar.Image 
-              source={require('../assets/m12.jpg')}
-              size={60}
+      <View style={{alignItems:'center'}}>
+      <Card style={{width:null, height:300,justifyContent:'center',marginBottom:20}}>
+          <Card.Cover 
+            source={require('../assets/m12.jpg')}
+            resizeMode= "cover"
+            style={{width:300, height:300,}}
             />
-            <View style={{paddingLeft:10}}>
-              <View style={{flexDirection:'row'}}>
-                <Title style={{fontSize:16}}>RoWoon</Title>
-                <Text style={{fontSize:14 , color:"#777777", marginLeft:10, paddingTop:8}}>5 ชม.</Text>
-              </View>
-              <Paragraph style={{fontSize:18}}>WTF</Paragraph>
-            </View>
-          </Card.Content>
-        </Card>
-        <Card  style={{marginBottom:10}}>
-          <Card.Content style={{flexDirection: 'row'}} >
-            <Avatar.Image 
-              source={require('../assets/m12.jpg')}
-              size={60}
+      </Card>
+      <Card style={{width:null, height:300,justifyContent:'center'}}>
+          <Card.Cover 
+            source={require('../assets/m13.jpg')}
+            resizeMode= "cover"
+            style={{width:300, height:300,}}
             />
-            <View style={{paddingLeft:10}}>
-              <View style={{flexDirection:'row'}}>
-                <Title style={{fontSize:16}}>RoWoon</Title>
-                <Text style={{fontSize:14 , color:"#777777", marginLeft:10, paddingTop:8}}>5 ชม.</Text>
-              </View>
-              <Paragraph style={{fontSize:18}}>What the help</Paragraph>
-            </View>
-          </Card.Content>
-        </Card>
+      </Card>
       </View>
+      </ScrollView>
+      
+      
+     
       
       
     </SafeAreaView>
@@ -111,7 +93,7 @@ const styles = StyleSheet.create({
   },
   userInfoSectionBox: {
     paddingHorizontal: 20,
-    marginBottom: 20,
+    marginBottom: 10,
   },
   title: {
     fontSize: 24,

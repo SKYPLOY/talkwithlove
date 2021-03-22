@@ -4,61 +4,61 @@ import {
     Text,
     Image,
     StyleSheet,
-    TouchableOpacity
+    TouchableOpacity,
   } from 'react-native';
-import { Container,Content, Card, CardItem, Thumbnail, Button, Icon, Left, Body, } from 'native-base';
+import { Container,Content, Card, CardItem, Thumbnail, Button, Icon, Body, } from 'native-base';
 import { Navigation } from '@material-ui/icons';
+
 
 
 export default function FeedScreen({navigation}) {
     return (
       <Container style={styles.container}>
         <Content>
-          <Card>
-            <CardItem>
-              <Left>
-                <Thumbnail source={require('../assets/m13.jpg')}  />
-                <Body>
-                <TouchableOpacity onPress={() =>  navigation.navigate("UserProfile")}>
-                  <Text>Rowoon</Text>
+          <Card style={{width:335}}>
+            <CardItem cardBody >
+            <Image 
+                  source={require('../assets/m13.jpg')} 
+                  resizeMode= "cover"
+                  style={{width:335,height:340, flex:1, justifyContent:'center'}} 
+            />  
+            </CardItem>
+            <CardItem style={{justifyContent:'space-around'}}>
+              <Body style={{flexDirection:'column',}}>
+                <TouchableOpacity onPress={() =>  navigation.navigate("Profile")}>
+                  <Text style={{marginRight:10, fontSize:20}}>Rowoon</Text>
                 </TouchableOpacity>
-                  
-                  <Text note>ชาย , 22 ปี</Text>
-                </Body>
-              </Left>
-            </CardItem>
-            <CardItem cardBody>
-              <Image source={require('../assets/m12.jpg')} style={{height: 300, width: null, flex: 1}}/>
-            </CardItem>
-            <CardItem style={{justifyContent:'space-between'}}>
-                <Button transparent>
+                <View style={{flexDirection:'row'}}>
+                  <Text note style={{marginRight:10}}>ชาย</Text>
+                  <Text note>22 ปี</Text>
+                </View>
+              </Body>
+              <Button transparent>
                   <Icon active name="chatbubble-ellipses-outline" /> 
-                </Button>
-                <Button transparent>
-                  <Icon active name="heart-outline" />
-                </Button>
+              </Button>
             </CardItem>
           </Card>
-          <Card>
-            <CardItem>
-              <Left>
-                <Thumbnail source={require('../assets/m13.jpg')} />
-                <Body>
-                  <Text>Rowoon</Text>
-                  <Text note>ชาย , 22 ปี</Text>
-                </Body>
-              </Left>
+          <Card style={{width:335}}>
+            <CardItem cardBody >
+            <Image 
+                  source={require('../assets/m9.jpg')} 
+                  resizeMode= "cover"
+                  style={{width:335,height:340, flex:1, justifyContent:'center'}} 
+            />  
             </CardItem>
-            <CardItem cardBody>
-              <Image source={require('../assets/m12.jpg')} style={{height: 300, width: null, flex: 1}}/>
-            </CardItem>
-            <CardItem style={{justifyContent:'space-between'}}>
-                <Button transparent>
-                <Icon active name="chatbubble-ellipses-outline" /> 
-                </Button>
-                <Button transparent>
-                  <Icon active name="heart-outline" />
-                </Button>
+            <CardItem style={{justifyContent:'space-around'}}>
+              <Body style={{flexDirection:'column',}}>
+                <TouchableOpacity onPress={() =>  navigation.navigate("UserProfile")}>
+                  <Text style={{marginRight:10, fontSize:20}}>Rowoon</Text>
+                </TouchableOpacity>
+                <View style={{flexDirection:'row'}}>
+                  <Text note style={{marginRight:10}}>ชาย</Text>
+                  <Text note>22 ปี</Text>
+                </View>
+              </Body>
+              <Button transparent>
+                  <Icon active name="chatbubble-ellipses-outline" /> 
+              </Button>
             </CardItem>
           </Card>
         </Content>
@@ -74,5 +74,5 @@ export default function FeedScreen({navigation}) {
     },
     Icon:{
       color:'red'
-    }
+    },
   })

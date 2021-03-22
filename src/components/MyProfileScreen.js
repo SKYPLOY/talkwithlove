@@ -11,13 +11,13 @@ import {
   Card,
   Paragraph
 } from 'react-native-paper';
-
+import { ScrollView } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 const ProfileScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
-
+      <ScrollView>
       <View style={styles.userInfoSection}>
         <View style={{flexDirection: 'row', marginTop: 15}}>
           <Avatar.Image 
@@ -37,6 +37,7 @@ const ProfileScreen = ({navigation}) => {
         </View>  
       </View>
 
+      <View style={styles.Box}>
       <View style={styles.userInfoSectionBox}>
         <View style={styles.row}>
           <Icon name="birthday-cake" color="#777777" size={20}/>
@@ -46,55 +47,30 @@ const ProfileScreen = ({navigation}) => {
           <Icon name="envelope" color="#777777" size={20}/>
           <Text style={{color:"#777777", marginLeft: 20}}>Rowoon_Lee@email.com</Text>
         </View>
-        <View style={styles.row}>
-          <Text style={{color:"#777777",fontSize:18}}>ผู้ติดตาม</Text>
-          <Text style={{marginLeft: 10,fontSize:18, fontWeight: 'bold'}}>228</Text>
-          <Text style={{color:"#777777",marginLeft: 20,fontSize:18}}>กำลังติดตาม</Text>
-          <Text style={{marginLeft: 10,fontSize:18, fontWeight: 'bold'}}>18</Text>
-        </View>
+      </View>
       </View>
       
-      <View style={styles.BoxPost}>
-        <TextInput
-          style={styles.input}
-          placeholder="โพสต์เรื่องราวของคุณ"
-          numberOfLines={2}
-          multiline={true}
-          />
-          <Icon name="paper-plane" color="#FDCFF1" size={25} style={{padding:15}} />
-      </View>
-      <View style={{padding:10}}>
-        <Card  style={{marginBottom:10}}>
-          <Card.Content style={{flexDirection: 'row'}} >
-            <Avatar.Image 
-              source={require('../assets/m12.jpg')}
-              size={60}
+      <View style={{alignItems:'center'}}>
+      <Card style={{width:null, height:300,justifyContent:'center',margin:10}}>
+          <Card.Cover 
+            source={require('../assets/m12.jpg')}
+            resizeMode= "cover"
+            style={{width:300, height:300,}}
             />
-            <View style={{paddingLeft:10}}>
-              <View style={{flexDirection:'row'}}>
-                <Title style={{fontSize:16}}>RoWoon</Title>
-                <Text style={{fontSize:14 , color:"#777777", marginLeft:10, paddingTop:8}}>5 ชม.</Text>
-              </View>
-              <Paragraph style={{fontSize:18}}>WTF</Paragraph>
-            </View>
-          </Card.Content>
-        </Card>
-        <Card  style={{marginBottom:10}}>
-          <Card.Content style={{flexDirection: 'row'}} >
-            <Avatar.Image 
-              source={require('../assets/m12.jpg')}
-              size={60}
+      </Card>
+      <Card style={{width:null, height:300,justifyContent:'center',margin:10}}>
+          <Card.Cover 
+            source={require('../assets/m13.jpg')}
+            resizeMode= "cover"
+            style={{width:300, height:300,}}
             />
-            <View style={{paddingLeft:10}}>
-              <View style={{flexDirection:'row'}}>
-                <Title style={{fontSize:16}}>RoWoon</Title>
-                <Text style={{fontSize:14 , color:"#777777", marginLeft:10, paddingTop:8}}>5 ชม.</Text>
-              </View>
-              <Paragraph style={{fontSize:18}}>What the help</Paragraph>
-            </View>
-          </Card.Content>
-        </Card>
+      </Card>
       </View>
+      </ScrollView>
+      <View>
+        <Button icon="camera"  mode="contained" color="#FBD1F0" onPress={() => console.log('Pressed')}> เพิ่มรูปภาพ </Button>
+      </View>
+     
       
       
     </SafeAreaView>
@@ -117,6 +93,11 @@ const styles = StyleSheet.create({
   userInfoSectionBox: {
     paddingHorizontal: 20,
     marginBottom: 20,
+  },
+  Box:{
+    borderBottomColor: '#dddddd',
+    borderBottomWidth: 1,
+    marginBottom:10
   },
   title: {
     fontSize: 24,

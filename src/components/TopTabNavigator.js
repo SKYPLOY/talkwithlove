@@ -7,7 +7,7 @@ import { Header} from 'react-native-elements';
  
 import Home from './HomeScreen'; 
 import ListChatScreen from './ListChatScreen';
-import NotificationsScreen from './NotificationsScreen';
+
 import Icon from 'react-native-vector-icons/FontAwesome' 
 
 const Tab = createMaterialTopTabNavigator();
@@ -55,17 +55,7 @@ export default function MyTabs() {
           />  
       )}}
       />
-      <Tab.Screen
-        name="Notifications"
-        component={NotificationsScreen}
-        options={{ tabBarIcon:({tintColor, focused})=>(  
-          <Icon  
-              name={focused ? 'bell' : 'bell'}  
-              color={tintColor}  
-              size={25}  
-          />  
-      )}}
-      />
+      
     </Tab.Navigator>
     </View>
   );

@@ -8,6 +8,7 @@ import HomeScreen from './src/components/TopTabNavigator';
 import QuestionnaireScreen from './src/components/QuestionnaireScreen';
 import MyProfileScreen from './src/components/MyProfileScreen';
 import UserProfileScreen from './src/components/UserProfileScreen';
+import UpImageUserScreen from './src/components/UpImageUserScreen';
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,7 @@ function App() {
         <Stack.Screen options={{headerShown: null}} name="Home " component={HomeScreen} />
         <Stack.Screen options={{title:"Profile",headerBackTitle:"black" }} name="Profile" component={MyProfileScreen} />
         <Stack.Screen options={{title:"User",headerBackTitle:"black" }} name="UserProfile" component={UserProfileScreen} />
+        <Stack.Screen options={{title:"UpImageProfile",headerBackTitle:"black" }} name="UpImageUser" component={UpImageUserScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

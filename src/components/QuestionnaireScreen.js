@@ -8,7 +8,7 @@ export default  Question = ({navigation}) => {
 
   return (
     <View style={styles.centeredView}>
-      <Modal
+      {/* <Modal
         animationType="slide"
         transparent={true}
         visible={modalVisible}
@@ -31,7 +31,7 @@ export default  Question = ({navigation}) => {
             </Pressable>
           </View>
         </View>
-      </Modal>
+      </Modal> */}
       <ScrollView>
         <View style={styles.Box}>
             <View><Image source={require('../assets/logo.png')} style={styles.ImageLogo}/></View>
@@ -129,7 +129,7 @@ export default  Question = ({navigation}) => {
         <View style={styles.buttonstart}>
           <Pressable
             style={[styles.button, styles.buttonOpen]}
-            onPress={() => setModalVisible(true)}
+            onPress={() => navigation.navigate("UpImageUser")}
              >
             <Text style={{width:310, textAlign:'center',color:'#515151'}}>ตกลง</Text>
           </Pressable>

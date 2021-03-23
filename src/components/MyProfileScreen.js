@@ -31,9 +31,6 @@ const ProfileScreen = ({navigation}) => {
             }]}>RoWoon</Title>
             <Caption style={styles.caption}>@Ro_Lee</Caption>
           </View>
-          <View style={{justifyContent:"flex-end", paddingBottom:39, marginLeft:10}}>
-            <Icon name="edit" color="#777777" size={20} onPress={() => navigation.navigate("Question ")} />
-          </View>
         </View>  
       </View>
 

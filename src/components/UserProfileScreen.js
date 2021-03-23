@@ -1,5 +1,3 @@
-import { Input } from 'native-base';
-import React from 'react';
 import {View, SafeAreaView, StyleSheet, TextInput} from 'react-native';
 import {
   Avatar,

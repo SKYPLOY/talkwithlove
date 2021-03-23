@@ -24,7 +24,7 @@ export default function FeedScreen({navigation}) {
             />  
             </CardItem>
             <CardItem style={{justifyContent:'space-around'}}>
-              <Body style={{flexDirection:'column',}}>
+              <Body style={{flexDirection:'column'}}>
                 <TouchableOpacity onPress={() =>  navigation.navigate("UserProfile")}>
                   <Text style={{marginRight:10, fontSize:20}}>Rowoon</Text>
                 </TouchableOpacity>
